@@ -13,7 +13,8 @@ export const todoSlice = createSlice({
 		},
 		removeItem: (state, action) => {
 			let array = [...state.items]
-			array.splice(action.payload, 1)
+			console.log(action.payload)
+			array.splice(action.payload.index, 1)
 
 			return { items: array}
 		},
