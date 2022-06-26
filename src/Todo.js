@@ -12,6 +12,11 @@ function Todo() {
 		e.preventDefault();
 		dispatch(addItem(input))
 	}
+	
+	const deleteItem = (e, index) => {
+		e.preventDefault()
+		dispatch(removeItem(index))
+	}
 
 	return (
 		<div>
@@ -24,7 +29,10 @@ function Todo() {
 				{list.map((item, index) => {
 					return (
 						<li key={index}>
-							{item}
+							{item} 
+							<button onClick={(e) => deleteItem(e, {index})}>
+								Delete
+							</button>
 						</li>
 					)
 				})}
