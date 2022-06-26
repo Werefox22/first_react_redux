@@ -14,8 +14,12 @@ export const todoSlice = createSlice({
 		removeItem: (state, action) => {
 			return { items: state.items.splice(action.payload, 1)}
 		},
-		clearItems: (state) => {
+		clearItems: () => {
 			return { items: [] }
 		}
 	}
 })
+
+export const { addItem, removeItem, clearItems } = todoSlice.actions
+
+export default todoSlice.reducer
